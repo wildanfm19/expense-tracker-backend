@@ -11,7 +11,7 @@ return new class extends Migration
         Schema:: create('transactions', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->enum('type', ['income', 'expense']);
+            $table->string('type'); 
             $table->decimal('amount', 15, 2);
             $table->string('category');
             $table->text('description')->nullable();
